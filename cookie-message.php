@@ -9,6 +9,6 @@ if (!empty($_COOKIE['cookieok'])) {
     setcookie('counter', $counter + 1);
     var_dump($counter);
 } else {
-    echo "<p>Do you allow cookies: <a href='cookie-message.php?cookieok=yes'>Yes</a></p>";
+    echo "<p>Do you allow cookies: <a href='cookie-message.php?cookieok=yes'>Yes</a>, <a href='cookierules.php?cookieok=no'>No</a></p>";
 }
 ?>
