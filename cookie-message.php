@@ -1,9 +1,14 @@
 <?php
-    // $counter=0;
-    // if(!empty($_COOKIE['counter'])){
-    //     $counter = @(int) $_COOKIE['counter'];
-    // }
-
-    $counter = @(int) ($_COOKIE['counter']??0);
+if(!empty($_GET['cookieok'])){
+    setcookie('cookieok','1');
+    header("Location: cookie-message.php");
+    die();
+}
+if (!empty($_COOKIE['cookieok'])) {
+    $counter = @(int) ($_COOKIE['counter'] ?? 0);
+    setcookie('counter', $counter + 1);
     var_dump($counter);
+} else {
+    echo "<p>Do you allow cookies: <a href='cookie-message.php?cookieok=yes'>Yes</a></p>";
+}
 ?>
